@@ -1,7 +1,7 @@
 extends CharacterBody2D
 @onready var animation_sprite = $AnimatedSprite2D
 
-@export var speed = 50
+@export var speed = 100
 var current_speed = speed
 
 var is_attacking = false
