@@ -2,9 +2,7 @@
 
 extends Area2D
 
-
-enum Pickups { COPPER, SILVER, GOLD }
-@export var item: Pickups
+@export var item : Global.Pickups
 
 @onready var sprite = $Sprite2D
 
@@ -15,22 +13,22 @@ var gold_texture = preload("res://Assets/Icons/coin_05d.png")
 # Called when the node enters the scene tree for the first time.
 func _ready():
     if (!Engine.is_editor_hint()):
-        if (item == Pickups.COPPER):
+        if (item == Global.Pickups.COPPER):
             sprite.set_texture(copper_texture)
-        if (item == Pickups.SILVER):
+        if (item == Global.Pickups.SILVER):
             sprite.set_texture(silver_texture)
-        if (item == Pickups.GOLD):
+        if (item == Global.Pickups.GOLD):
             sprite.set_texture(gold_texture)
 
 
 func _process(_delta):
     #executes the code in the editor without running the game
     if (Engine.is_editor_hint()):
-        if (item == Pickups.COPPER):
+        if (item == Global.Pickups.COPPER):
             sprite.set_texture(copper_texture)
-        if (item == Pickups.SILVER):
+        if (item == Global.Pickups.SILVER):
             sprite.set_texture(silver_texture)
-        if (item == Pickups.GOLD):
+        if (item == Global.Pickups.GOLD):
             sprite.set_texture(gold_texture)
 
 

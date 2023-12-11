@@ -2,9 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://ckx6cfsnq6t2b" path="res://Assets/Atlas.png" id="1_bjwy6"]
 [ext_resource type="PackedScene" uid="uid://bjc2dnoqawg7g" path="res://Scenes/Player.tscn" id="1_rk60l"]
+[ext_resource type="Script" path="res://Scripts/Main.gd" id="1_umon6"]
 [ext_resource type="Texture2D" uid="uid://fqukk3j6s0xu" path="res://Assets/Interior.png" id="2_1f46e"]
 [ext_resource type="Texture2D" uid="uid://fgjxr4il205f" path="res://Assets/Water.png" id="3_u6toc"]
-[ext_resource type="PackedScene" uid="uid://c2i6jn4u2b2wq" path="res://Scenes/Pickup.tscn" id="5_5b464"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_dvxlv"]
 tile_data = PackedInt32Array(0, 2228227, 33, 65536, 2228227, 34, 1, 2293763, 33, 65537, 2293763, 34)
@@ -7826,6 +7826,7 @@ pattern_0 = SubResource("TileMapPattern_dvxlv")
 pattern_1 = SubResource("TileMapPattern_i5dqd")
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_umon6")
 
 [node name="Map" type="TileMap" parent="."]
 position = Vector2(82, 191)
@@ -7862,16 +7863,7 @@ layer_4/y_sort_origin = 0
 layer_4/z_index = 1
 layer_4/tile_data = PackedInt32Array(-524276, 2162691, 30, -458740, 2162691, 31, -393204, 2162691, 32, -589811, 2228227, 29, -524275, 2228227, 30, -458739, 2228227, 31, -393203, 2228227, 32, -589810, 2293763, 29, -524274, 2293763, 30, -458738, 2293763, 31, -393202, 2293763, 32, -524273, 2359299, 30, -458737, 2359299, 31, -393201, 2359299, 32)
 
-[node name="Pickup" parent="." instance=ExtResource("5_5b464")]
-position = Vector2(237, 172)
-
-[node name="Pickup2" parent="." instance=ExtResource("5_5b464")]
-position = Vector2(258, 155)
-item = 1
-
-[node name="Pickup3" parent="." instance=ExtResource("5_5b464")]
-position = Vector2(261, 179)
-item = 2
+[node name="SpawnedPickups" type="Node2D" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("1_rk60l")]
 position = Vector2(164, 88)

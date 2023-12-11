@@ -25,7 +25,7 @@ signal copper_updated
 signal silver_updated
 signal gold_updated
 
-enum Pickups { COPPER, SILVER, GOLD }
+
 var copper = 0
 var silver = 0
 var gold = 0
@@ -123,12 +123,12 @@ func _on_animated_sprite_2d_animation_finished():
     is_attacking = false
 
 func add_pickup(item):
-    if item == Pickups.COPPER: 
+    if item == Global.Pickups.COPPER: 
         copper += 1
         copper_updated.emit(copper)
-    if item == Pickups.SILVER: 
+    if item == Global.Pickups.SILVER: 
         silver += 1
         silver_updated.emit(silver)
-    if item == Pickups.GOLD: 
+    if item == Global.Pickups.GOLD: 
         gold += 1
         gold_updated.emit(gold)
