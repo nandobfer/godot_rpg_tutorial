@@ -1,12 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://b6kda36lukkr8"]
+[gd_scene load_steps=11 format=3 uid="uid://b6kda36lukkr8"]
 
 [ext_resource type="Texture2D" uid="uid://ckx6cfsnq6t2b" path="res://Assets/Atlas.png" id="1_bjwy6"]
 [ext_resource type="PackedScene" uid="uid://bjc2dnoqawg7g" path="res://Scenes/Player.tscn" id="1_rk60l"]
 [ext_resource type="Texture2D" uid="uid://fqukk3j6s0xu" path="res://Assets/Interior.png" id="2_1f46e"]
 [ext_resource type="Texture2D" uid="uid://fgjxr4il205f" path="res://Assets/Water.png" id="3_u6toc"]
 
-[sub_resource type="TileMapPattern" id="TileMapPattern_wncrw"]
-tile_data = PackedInt32Array(65536, 2162691, 30, 131072, 2162691, 31, 196608, 2162691, 32, 262144, 2162691, 33, 1, 2228227, 29, 65537, 2228227, 30, 131073, 2228227, 31, 196609, 2228227, 32, 262145, 2228227, 33, 327681, 2228227, 34, 2, 2293763, 29, 65538, 2293763, 30, 131074, 2293763, 31, 196610, 2293763, 32, 262146, 2293763, 33, 327682, 2293763, 34, 65539, 2359299, 30, 131075, 2359299, 31, 196611, 2359299, 32, 262147, 2359299, 33)
+[sub_resource type="TileMapPattern" id="TileMapPattern_dvxlv"]
+tile_data = PackedInt32Array(0, 2228227, 33, 65536, 2228227, 34, 1, 2293763, 33, 65537, 2293763, 34)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_i5dqd"]
+tile_data = PackedInt32Array(65536, 2162691, 30, 131072, 2162691, 31, 196608, 2162691, 32, 1, 2228227, 29, 65537, 2228227, 30, 131073, 2228227, 31, 196609, 2228227, 32, 2, 2293763, 29, 65538, 2293763, 30, 131074, 2293763, 31, 196610, 2293763, 32, 65539, 2359299, 30, 131075, 2359299, 31, 196611, 2359299, 32)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lwpp1"]
 texture = ExtResource("1_bjwy6")
@@ -7818,7 +7821,8 @@ terrain_set_2/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/3 = SubResource("TileSetAtlasSource_lwpp1")
 sources/4 = SubResource("TileSetAtlasSource_0mo0n")
 sources/5 = SubResource("TileSetAtlasSource_ddgg8")
-pattern_0 = SubResource("TileMapPattern_wncrw")
+pattern_0 = SubResource("TileMapPattern_dvxlv")
+pattern_1 = SubResource("TileMapPattern_i5dqd")
 
 [node name="Main" type="Node2D"]
 
@@ -7848,7 +7852,14 @@ layer_3/modulate = Color(1, 1, 1, 1)
 layer_3/y_sort_enabled = false
 layer_3/y_sort_origin = 0
 layer_3/z_index = 0
-layer_3/tile_data = PackedInt32Array(-524281, 2162691, 30, -393209, 2162691, 32, -589816, 2228227, 29, -524280, 2228227, 30, -393208, 2228227, 32, -327672, 2228227, 33, -589815, 2293763, 29, -524279, 2293763, 30, -393207, 2293763, 32, -327671, 2293763, 33, -524278, 2359299, 30, -393206, 2359299, 32, -327673, 2162691, 33, -262136, 2228227, 34, -262135, 2293763, 34, -327670, 2359299, 33, -458745, 2162691, 31, -458744, 2228227, 31, -458743, 2293763, 31, -458742, 2359299, 31)
+layer_3/tile_data = PackedInt32Array(-327667, 2228227, 33, -262131, 2228227, 34, -327666, 2293763, 33, -262130, 2293763, 34)
+layer_4/name = "foliage_high"
+layer_4/enabled = true
+layer_4/modulate = Color(1, 1, 1, 1)
+layer_4/y_sort_enabled = false
+layer_4/y_sort_origin = 0
+layer_4/z_index = 1
+layer_4/tile_data = PackedInt32Array(-524276, 2162691, 30, -458740, 2162691, 31, -393204, 2162691, 32, -589811, 2228227, 29, -524275, 2228227, 30, -458739, 2228227, 31, -393203, 2228227, 32, -589810, 2293763, 29, -524274, 2293763, 30, -458738, 2293763, 31, -393202, 2293763, 32, -524273, 2359299, 30, -458737, 2359299, 31, -393201, 2359299, 32)
 
 [node name="Player" parent="." instance=ExtResource("1_rk60l")]
 position = Vector2(164, 88)
