@@ -2,6 +2,9 @@ extends CharacterBody2D
 @onready var animation_sprite = $AnimatedSprite2D
 @onready var health_bar = $UI/HealthBar
 @onready var stamina_bar = $UI/StaminaBar
+@onready var copper_gui = $UI/Copper
+@onready var silver_gui = $UI/Silver
+@onready var gold_gui = $UI/Gold
 
 @export var speed = 100
 var current_speed = speed
@@ -18,10 +21,21 @@ var new_direction: Vector2
 
 signal health_updated
 signal stamina_updated
+signal copper_updated
+signal silver_updated
+signal gold_updated
+
+enum Pickups { COPPER, SILVER, GOLD }
+var copper = 0
+var silver = 0
+var gold = 0
 
 func _ready():
     health_updated.connect(health_bar.update_health_ui)
     stamina_updated.connect(stamina_bar.update_stamina_ui)
+    copper_updated.connect(copper_gui.update_copper_ui)
+    silver_updated.connect(silver_gui.update_silver_ui)
+    gold_updated.connect(gold_gui.update_gold_ui)
 
 func _process(delta):
     #regenerates health
@@ -107,3 +121,14 @@ func getDirection(direction: Vector2):
 
 func _on_animated_sprite_2d_animation_finished():
     is_attacking = false
+
+func add_pickup(item):
+    if item == Pickups.COPPER: 
+        copper += 1
+        copper_updated.emit(copper)
+    if item == Pickups.SILVER: 
+        silver += 1
+        silver_updated.emit(silver)
+    if item == Pickups.GOLD: 
+        gold += 1
+        gold_updated.emit(gold)
